@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	darkMode: 'class',
@@ -6,7 +5,7 @@ module.exports = {
 		extend: {
 			backgroundColor: {
 				primary: 'var(--color-bg-primary)',
-				secondary: 'var(--colo-bg-secondary)',
+				secondary: 'var(--color-bg-secondary)',
 				button: 'var(--color-bg-button)',
 			},
 			textColor: {
