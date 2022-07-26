@@ -13,11 +13,11 @@ const ThemeToggle = () => {
 					className='flex items-center cursor-pointer'
 					onClick={() =>
 						setTheme(
-							theme === 'dark' ? 'Light' : 'dark'
+							theme === 'dark' ? 'light' : 'dark'
 						)
 					}
 				>
-					<HiSun className='text-primary text-2xl mr-2' />
+					<HiSun className='text-primary text-2xl mr-2' />{' '}
 					Light Mode
 				</div>
 			) : (
@@ -25,7 +25,7 @@ const ThemeToggle = () => {
 					className='flex items-center cursor-pointer'
 					onClick={() =>
 						setTheme(
-							theme === 'dark' ? 'Light' : 'dark'
+							theme === 'dark' ? 'light' : 'dark'
 						)
 					}
 				>
