@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	AiFillLock,
 	AiOutlineMail,
 } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import {
+	Link,
+	useNavigate,
+} from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 
 const SignUp = () => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+	const navigate = useNavigate();
+	const { signUp } = UserAuth();
+
 	return (
 		<div>
 			<div className='max-w-[400px] mx-auto min-h-[600px] px-4 py-20'>
 				<h1 className='text-2xl font-bold'>
 					Sign Up
 				</h1>
+				{error ? (
+					<p className='bg-red p-3 my-2'>
+						{error}
+					</p>
+				) : null}
 				<form>
 					<div className='my-4'>
 						<label>Email</label>
