@@ -28,7 +28,7 @@ const Account = () => {
 							Account
 						</h1>
 						<div>
-							<p>Welcome, {user?.email}</p>
+							<p>Welcome, {user?.username}</p>
 						</div>
 					</div>
 					<div>

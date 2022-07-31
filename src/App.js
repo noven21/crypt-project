@@ -13,8 +13,9 @@ import axios from 'axios';
 import CoinPage from './routes/CoinPage';
 import Footer from './components/Footer';
 import { AuthContextProvider } from './context/AuthContext';
+import CoinsItems from './routes/CoinsItems';
 
-function App() {
+function App({}) {
 	const [coins, setCoins] = useState([]);
 
 	const url =
@@ -47,6 +48,10 @@ function App() {
 					<Route
 						path='/account'
 						element={<Account />}
+					/>
+					<Route
+						path='/coinsitems'
+						element={<CoinsItems coins={coins} />}
 					/>
 					<Route
 						path='/coin/:coinId'

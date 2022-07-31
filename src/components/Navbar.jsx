@@ -12,7 +12,6 @@ import { UserAuth } from '../context/AuthContext';
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false);
-
 	const { user, logout } = UserAuth();
 	const navigate = useNavigate();
 
@@ -24,15 +23,15 @@ const Navbar = () => {
 		try {
 			await logout();
 			navigate('/');
-		} catch (err) {
-			console.log(err.message);
+		} catch (e) {
+			console.log(e.message);
 		}
 	};
 
 	return (
-		<div className='rounded-div border-none flex items-center justify-between h-20 font-bold'>
+		<div className='rounded-div flex items-center justify-between h-20 font-bold'>
 			<Link to='/'>
-				<h1 className='text-2xl'>Cryptonian</h1>
+				<h1 className='text-2xl'>Cryptobase</h1>
 			</Link>
 			<div className='hidden md:block'>
 				<ThemeToggle />
@@ -49,9 +48,12 @@ const Navbar = () => {
 				</div>
 			) : (
 				<div className='hidden md:block'>
+					<Link to='/coinsitems'>
+						Cryptocurrencies
+					</Link>
 					<Link
 						to='/signin'
-						className='p-4 hover:text-accent  '
+						className='p-4 hover:text-accent'
 					>
 						Sign In
 					</Link>
@@ -81,10 +83,10 @@ const Navbar = () => {
 				className={
 					nav
 						? 'md:hidden fixed left-0 top-20 flex flex-col items-center justify-between w-full h-[90%] bg-primary ease-in duration-300 z-10'
-						: 'fixed left-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in  duration-300'
+						: 'fixed left-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in duration-300'
 				}
 			>
-				<ul className='w-full p-4 '>
+				<ul className='w-full p-4'>
 					<li
 						onClick={handleNav}
 						className='border-b py-6'
@@ -97,7 +99,7 @@ const Navbar = () => {
 					>
 						<Link to='/account'>Account</Link>
 					</li>
-					<li className='py-6'>
+					<li className=' py-6'>
 						<ThemeToggle />
 					</li>
 				</ul>
@@ -105,17 +107,13 @@ const Navbar = () => {
 					<Link to='/signin'>
 						<button
 							onClick={handleNav}
-							className='w-full my-2 p-3 bg-primary 
-						text-primary  border-secondary rounded-2xl shadow-xl'
+							className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'
 						>
 							Sign In
 						</button>
 					</Link>
-					<Link to='/signup'>
-						<button
-							onClick={handleNav}
-							className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'
-						>
+					<Link onClick={handleNav} to='/signup'>
+						<button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>
 							Sign Up
 						</button>
 					</Link>

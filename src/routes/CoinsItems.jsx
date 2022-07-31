@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import CoinItem from './CoinItem';
+import CoinItem from '../components/CoinItem';
 
-const CoinSearch = ({ coins, simplified }) => {
+const CoinsItems = ({ coins, simplified }) => {
 	const count = simplified ? 10 : 100;
 	const [searchText, setSearchText] =
 		useState('');
@@ -75,4 +75,4 @@ const CoinSearch = ({ coins, simplified }) => {
 	);
 };
 
-export default CoinSearch;
+export default CoinsItems;
