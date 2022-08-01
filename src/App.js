@@ -17,9 +17,13 @@ import CoinsItems from './routes/CoinsItems';
 
 function App({}) {
 	const [coins, setCoins] = useState([]);
+	const [cryptos, setCryptos] = useState([]);
 
 	const url =
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=true';
+
+	const url2 =
+		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true';
 
 	useEffect(() => {
 		axios.get(url).then((response) => {
@@ -27,6 +31,13 @@ function App({}) {
 			// console.log(response.data);
 		});
 	}, [url]);
+
+	useEffect(() => {
+		axios.get(url2).then((response) => {
+			setCryptos(response.data);
+			// console.log(response.data);
+		});
+	}, [url2]);
 
 	return (
 		<ThemeProvider>
@@ -51,7 +62,9 @@ function App({}) {
 					/>
 					<Route
 						path='/coinsitems'
-						element={<CoinsItems coins={coins} />}
+						element={
+							<CoinsItems cryptos={cryptos} />
+						}
 					/>
 					<Route
 						path='/coin/:coinId'

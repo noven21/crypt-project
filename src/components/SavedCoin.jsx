@@ -50,8 +50,11 @@ const SavedCoin = () => {
 					You don't have any coins saved. Please
 					save a coin to add it to your watch
 					list.
-					<Link to='/'>
-						Click here to search coin.
+					<Link to='/coinsitems'>
+						<span className='text-accent font-bold'>
+							Click here
+						</span>{' '}
+						to search coin.
 					</Link>
 				</p>
 			) : (

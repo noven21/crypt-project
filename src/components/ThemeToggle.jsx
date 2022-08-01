@@ -17,8 +17,7 @@ const ThemeToggle = () => {
 						)
 					}
 				>
-					<HiSun className='text-primary text-2xl mr-2' />{' '}
-					Light Mode
+					<HiSun className='text-primary text-2xl ' />
 				</div>
 			) : (
 				<div
@@ -29,8 +28,7 @@ const ThemeToggle = () => {
 						)
 					}
 				>
-					<HiMoon className='text-primary text-2xl mr-2' />{' '}
-					Dark Mode
+					<HiMoon className='text-primary text-2xl ' />
 				</div>
 			)}
 		</div>

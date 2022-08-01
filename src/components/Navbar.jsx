@@ -29,40 +29,79 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className='rounded-div flex items-center justify-between h-20 font-bold'>
+		<nav className='rounded-div flex items-center justify-between h-20 font-bold'>
 			<Link to='/'>
-				<h1 className='text-2xl'>Cryptobase</h1>
+				<h1 className='text-2xl '>
+					<span className='text-accent'>Obs</span>
+					Crypto
+				</h1>
 			</Link>
-			<div className='hidden md:block'>
-				<ThemeToggle />
-			</div>
 
 			{user?.email ? (
-				<div>
-					<Link to='/account' className='p-4'>
-						Account
-					</Link>
-					<button onClick={handleSignOut}>
-						Sign out
-					</button>
-				</div>
-			) : (
-				<div className='hidden md:block'>
-					<Link to='/coinsitems'>
+				<div className='flex items-center justify-center '>
+					<Link
+						to='/coinsitems'
+						className='text-base font-light'
+					>
 						Cryptocurrencies
 					</Link>
 					<Link
-						to='/signin'
-						className='p-4 hover:text-accent'
+						to='/account'
+						className='p-4 text-lg'
 					>
-						Sign In
+						Account
 					</Link>
-					<Link
-						to='/signup'
-						className='bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'
+					<button
+						onClick={handleSignOut}
+						className='px-5 py-2 font-bold w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'
 					>
-						Sign Up
-					</Link>
+						Sign out
+					</button>
+
+					<div>
+						<ThemeToggle />
+					</div>
+				</div>
+			) : (
+				<div className='hidden md:block '>
+					<div className='flex items-center'>
+						<Link
+							to='/coinsitems'
+							className='text-lg '
+						>
+							Cryptocurrencies
+						</Link>
+						<Link
+							to='/coinsitems'
+							className='text-lg ml-8'
+						>
+							Exchange
+						</Link>
+						<Link
+							to='/coinsitems'
+							className='text-lg ml-8'
+						>
+							About
+						</Link>
+						{/* <div>
+							<Link
+								to='/signin'
+								className=' font-bold py-2 px-5 w-full my-2 p-3 bg-primary 
+							text-primary  border-secondary rounded-2xl shadow-xl  hover:shadow-lg'
+							>
+								Sign In
+							</Link>
+							<Link
+								to='/signup'
+								className='bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'
+							>
+								Sign Up
+							</Link>
+						</div> */}
+						<div>
+							<ThemeToggle className='ml-8' />
+						</div>
+					</div>
 				</div>
 			)}
 
@@ -119,7 +158,7 @@ const Navbar = () => {
 					</Link>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

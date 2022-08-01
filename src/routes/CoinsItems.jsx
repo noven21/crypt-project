@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import CoinItem from '../components/CoinItem';
 
-const CoinsItems = ({ coins, simplified }) => {
-	const count = simplified ? 10 : 100;
+const CoinsItems = ({ cryptos }) => {
+	// const count = simplified ? 10 : 100;
 	const [searchText, setSearchText] =
 		useState('');
 
@@ -15,9 +15,9 @@ const CoinsItems = ({ coins, simplified }) => {
 			pt-4 pb-6 text-center md:text-right'
 			>
 				<h1 className='text-2xl font-bold my-2'>
-					Top 10 Cryptos
+					Cryptocurrencies
 				</h1>
-				{/* <form>
+				<form>
 					<input
 						onChange={(e) =>
 							setSearchText(e.target.value)
@@ -27,7 +27,7 @@ const CoinsItems = ({ coins, simplified }) => {
 						type='text'
 						placeholder='Search a coin'
 					/>
-				</form> */}
+				</form>
 			</div>
 
 			<table className='w-full border-collapse text-center'>
@@ -49,7 +49,7 @@ const CoinsItems = ({ coins, simplified }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{coins
+					{cryptos
 						.filter((value) => {
 							if (searchText === '') {
 								return value;

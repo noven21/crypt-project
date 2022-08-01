@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutHome from '../components/AboutHome';
 import CoinItem from '../components/CoinItem';
 import CoinSearch from '../components/CoinSearch';
 import Header from '../components/Header';
@@ -10,6 +11,7 @@ const Home = ({ coins }) => {
 			<Header />
 			<CoinSearch coins={coins} />
 			{/* <CoinItem key={coins.id} coins={coins} /> */}
+			<AboutHome />
 			<Trending />
 		</div>
 	);
