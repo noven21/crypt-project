@@ -7,13 +7,13 @@ import Trending from '../components/Trending';
 
 const Home = ({ coins }) => {
 	return (
-		<div>
+		<main>
 			<Header />
 			<CoinSearch coins={coins} />
 			{/* <CoinItem key={coins.id} coins={coins} /> */}
 			<AboutHome />
 			<Trending />
-		</div>
+		</main>
 	);
 };
 

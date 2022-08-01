@@ -33,7 +33,7 @@ const Navbar = () => {
 			<Link to='/'>
 				<h1 className='text-2xl '>
 					<span className='text-accent'>Obs</span>
-					Crypto
+					Crypto~
 				</h1>
 			</Link>
 
@@ -138,6 +138,18 @@ const Navbar = () => {
 					>
 						<Link to='/account'>Account</Link>
 					</li>
+					<li className='border-b py-6'>
+						<Link to='/coinsitems'>
+							Cryptocurrencies
+						</Link>
+					</li>
+					<li className='border-b py-6'>
+						<Link to='/coinsitems'>Exchange</Link>
+					</li>
+					<li className='border-b py-6'>
+						<Link to='/coinsitems'>About</Link>
+					</li>
+
 					<li className=' py-6'>
 						<ThemeToggle />
 					</li>
