@@ -32,7 +32,7 @@ const Trending = () => {
                     justify-between
                     p-4
                     hover:scale-105
-					hover:shadow-2xl
+					hover:shadow-lg
                     ease-in-out
                     duration-300
 					
