@@ -2,6 +2,7 @@ import React from 'react';
 import AboutHome from '../components/AboutHome';
 import CoinItem from '../components/CoinItem';
 import CoinSearch from '../components/CoinSearch';
+import GetStarted from '../components/GetStarted';
 import Header from '../components/Header';
 import Trending from '../components/Trending';
 
@@ -13,6 +14,7 @@ const Home = ({ coins }) => {
 			{/* <CoinItem key={coins.id} coins={coins} /> */}
 			<AboutHome />
 			<Trending />
+			<GetStarted />
 		</main>
 	);
 };

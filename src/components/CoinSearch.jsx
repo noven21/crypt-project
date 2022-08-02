@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import CoinItem from './CoinItem';
 
@@ -14,9 +15,9 @@ const CoinSearch = ({ coins, simplified }) => {
 				className='flex flex-col md:flex-row justify-between 
 			pt-4 pb-6 text-center md:text-right'
 			>
-				<h1 className='text-2xl font-bold my-2'>
+				<h2 className='text-2xl font-bold my-2'>
 					Top 10 Cryptos
-				</h1>
+				</h2>
 				{/* <form>
 					<input
 						onChange={(e) =>
@@ -71,6 +72,11 @@ const CoinSearch = ({ coins, simplified }) => {
 						))}
 				</tbody>
 			</table>
+			<div className='py-4 text-accent  flex justify-end'>
+				<Link to='/coinsitems'>
+					<h2>See More</h2>
+				</Link>
+			</div>
 		</main>
 	);
 };

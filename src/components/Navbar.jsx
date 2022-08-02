@@ -41,7 +41,7 @@ const Navbar = () => {
 				<div className='flex items-center justify-center '>
 					<Link
 						to='/coinsitems'
-						className='text-base font-light'
+						className=' text-lg'
 					>
 						Cryptocurrencies
 					</Link>
@@ -65,8 +65,8 @@ const Navbar = () => {
 			) : (
 				<div className='hidden md:block '>
 					<div className='flex items-center'>
-						<Link
-							to='/coinsitems'
+						{/* <Link
+							to='/cryptocurrencies'
 							className='text-lg '
 						>
 							Cryptocurrencies
@@ -82,7 +82,7 @@ const Navbar = () => {
 							className='text-lg ml-8'
 						>
 							About
-						</Link>
+						</Link> */}
 						{/* <div>
 							<Link
 								to='/signin'

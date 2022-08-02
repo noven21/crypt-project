@@ -32,8 +32,11 @@ const Trending = () => {
                     justify-between
                     p-4
                     hover:scale-105
+					hover:shadow-2xl
                     ease-in-out
-                    duration-300'
+                    duration-300
+					
+					'
 					>
 						<div className='flex w-full items-center justify-between'>
 							<Link to={`/coin/${coin.item.id}`}>

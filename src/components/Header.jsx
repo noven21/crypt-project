@@ -21,13 +21,13 @@ const Header = () => {
 					<Link to='/signin' className='mr-8'>
 						<button
 							className=' font-bold py-2 px-5 w-full my-2 p-3 bg-primary 
-					text-primary  border-secondary rounded-2xl shadow-xl '
+					text-primary hover:scale-105  border-secondary rounded-2xl shadow-xl '
 						>
 							Sign In
 						</button>
 					</Link>
 					<Link to='/signup'>
-						<button className='px-5 py-2 font-bold w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>
+						<button className='px-5 py-2 font-bold w-full my-2 p-3 bg-button text-btnText rounded-2xl  shadow-xl   hover:scale-105'>
 							Sign Up
 						</button>
 					</Link>

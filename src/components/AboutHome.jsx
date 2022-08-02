@@ -34,7 +34,7 @@ const AboutHome = () => {
 				</div>
 				<div className='mt-20'>
 					<div className='text-center mb-10'>
-						<h1 className='font-semibold text-2xl '>
+						<h1 className='font-bold text-2xl '>
 							Get Started in Just Few Minute
 						</h1>
 						<p className='text-base'>
@@ -87,7 +87,7 @@ const AboutHome = () => {
 					</div>
 				</div>
 			</section>
-			<div className='bg-blue-200 h-[300px] mt-[-300px] rounded-t-3xl'></div>
+			<div className='bg-blue-200 hidden md:block  h-[300px] mt-[-300px] rounded-t-3xl'></div>
 		</section>
 	);
 };
