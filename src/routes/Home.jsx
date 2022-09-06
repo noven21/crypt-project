@@ -1,17 +1,17 @@
 import React from 'react';
-import AboutHome from '../components/AboutHome';
-import CoinItem from '../components/CoinItem';
-import CoinSearch from '../components/CoinSearch';
-import GetStarted from '../components/GetStarted';
-import Header from '../components/Header';
-import Trending from '../components/Trending';
+import AboutHome from '../components/AboutHome/AboutHome';
+
+import CoinSearch from '../components/CoinSearch/CoinSearch';
+import GetStarted from '../components/GetStarted/GetStarted';
+import Header from '../components/Header/Header';
+import Trending from '../components/Trending/Trending';
 
 const Home = ({ coins }) => {
 	return (
 		<main>
 			<Header />
 			<CoinSearch coins={coins} />
-			{/* <CoinItem key={coins.id} coins={coins} /> */}
+
 			<AboutHome />
 			<Trending />
 			<GetStarted />

@@ -1,9 +1,6 @@
-import React, {
-	useEffect,
-	useState,
-} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './routes/Home';
 import SignIn from './routes/SignIn';
@@ -11,7 +8,7 @@ import SignUp from './routes/SignUp';
 import Account from './routes/Account';
 import axios from 'axios';
 import CoinPage from './routes/CoinPage';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import { AuthContextProvider } from './context/AuthContext';
 import CoinsItems from './routes/CoinsItems';
 
@@ -44,32 +41,15 @@ function App({}) {
 			<AuthContextProvider>
 				<Navbar />
 				<Routes>
-					<Route
-						path='/'
-						element={<Home coins={coins} />}
-					/>
-					<Route
-						path='/signin'
-						element={<SignIn />}
-					/>
-					<Route
-						path='/signup'
-						element={<SignUp />}
-					/>
-					<Route
-						path='/account'
-						element={<Account />}
-					/>
+					<Route path='/' element={<Home coins={coins} />} />
+					<Route path='/signin' element={<SignIn />} />
+					<Route path='/signup' element={<SignUp />} />
+					<Route path='/account' element={<Account />} />
 					<Route
 						path='/coinsitems'
-						element={
-							<CoinsItems cryptos={cryptos} />
-						}
+						element={<CoinsItems cryptos={cryptos} />}
 					/>
-					<Route
-						path='/coin/:coinId'
-						element={<CoinPage />}
-					>
+					<Route path='/coin/:coinId' element={<CoinPage />}>
 						<Route path=':coinId' />
 					</Route>
 				</Routes>

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import CoinItem from './CoinItem';
+import CoinItem from '../CoinItem/CoinItem';
 
-const CoinSearch = ({ coins, simplified }) => {
-	const count = simplified ? 10 : 100;
-	const [searchText, setSearchText] =
-		useState('');
+const CoinSearch = ({ coins }) => {
+	const [searchText, setSearchText] = useState('');
 
 	// console.log(coins);
 	return (
@@ -15,20 +13,7 @@ const CoinSearch = ({ coins, simplified }) => {
 				className='flex flex-col md:flex-row justify-between 
 			pt-4 pb-6 text-center md:text-right'
 			>
-				<h2 className='text-2xl font-bold my-2'>
-					Top 10 Cryptos
-				</h2>
-				{/* <form>
-					<input
-						onChange={(e) =>
-							setSearchText(e.target.value)
-						}
-						className='w-full bg-primary  border-input px-4 py-2 
-						rounded-2xl shadow-xl'
-						type='text'
-						placeholder='Search a coin'
-					/>
-				</form> */}
+				<h2 className='text-2xl font-bold my-2'>Top 10 Cryptos</h2>
 			</div>
 
 			<table className='w-full border-collapse text-center'>
@@ -40,12 +25,8 @@ const CoinSearch = ({ coins, simplified }) => {
 						<th></th>
 						<th>Price</th>
 						<th>24h</th>
-						<th className='hidden md:table-cell'>
-							24h Volume
-						</th>
-						<th className='hidden sm:table-cell'>
-							Mkt
-						</th>
+						<th className='hidden md:table-cell'>24h Volume</th>
+						<th className='hidden sm:table-cell'>Mkt</th>
 						<th>Last 7 Days</th>
 					</tr>
 				</thead>
@@ -57,18 +38,13 @@ const CoinSearch = ({ coins, simplified }) => {
 							} else if (
 								value.name
 									.toLowerCase()
-									.includes(
-										searchText.toLowerCase()
-									)
+									.includes(searchText.toLowerCase())
 							) {
 								return value;
 							}
 						})
 						.map((coin) => (
-							<CoinItem
-								key={coin.id}
-								coin={coin}
-							/>
+							<CoinItem key={coin.id} coin={coin} />
 						))}
 				</tbody>
 			</table>

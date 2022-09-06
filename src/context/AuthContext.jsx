@@ -4,7 +4,7 @@ import {
 	useEffect,
 	useState,
 } from 'react';
-import { auth, db } from '../Firebase';
+import { auth, db } from '../config/firebase';
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
@@ -16,27 +16,17 @@ import { doc, setDoc } from 'firebase/firestore';
 
 const UserContext = createContext();
 
-export const AuthContextProvider = ({
-	children,
-}) => {
+export const AuthContextProvider = ({ children }) => {
 	const [user, setUser] = useState({});
 
 	const signUp = (email, password) => {
-		createUserWithEmailAndPassword(
-			auth,
-			email,
-			password
-		);
+		createUserWithEmailAndPassword(auth, email, password);
 		return setDoc(doc(db, 'users', email), {
 			watchList: [],
 		});
 	};
 	const signIn = (email, password) => {
-		return signInWithEmailAndPassword(
-			auth,
-			email,
-			password
-		);
+		return signInWithEmailAndPassword(auth, email, password);
 	};
 
 	const logout = () => {
@@ -44,21 +34,16 @@ export const AuthContextProvider = ({
 	};
 
 	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(
-			auth,
-			(currentUser) => {
-				setUser(currentUser);
-			}
-		);
+		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+			setUser(currentUser);
+		});
 		return () => {
 			unsubscribe();
 		};
 	}, []);
 
 	return (
-		<UserContext.Provider
-			value={{ signUp, signIn, logout, user }}
-		>
+		<UserContext.Provider value={{ signUp, signIn, logout, user }}>
 			{children}
 		</UserContext.Provider>
 	);

@@ -6,7 +6,8 @@ import {
 	FaTiktok,
 	FaTwitter,
 } from 'react-icons/fa';
-import ThemeToggle from './ThemeToggle';
+import { Link } from 'react-router-dom';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Footer = () => {
 	return (
@@ -16,35 +17,19 @@ const Footer = () => {
 					<div>
 						<h2 className='font-bold'>Support</h2>
 						<ul>
-							<li className='text-sm py-2'>
-								Help Center
-							</li>
-							<li className='text-sm py-2'>
-								Contact Us
-							</li>
-							<li className='text-sm py-2'>
-								API Status
-							</li>
-							<li className='text-sm py-2'>
-								Documentation
-							</li>
+							<li className='text-sm py-2'>Help Center</li>
+							<li className='text-sm py-2'>Contact Us</li>
+							<li className='text-sm py-2'>API Status</li>
+							<li className='text-sm py-2'>Documentation</li>
 						</ul>
 					</div>
 					<div>
 						<h2 className='font-bold'>Info</h2>
 						<ul>
-							<li className='text-sm py-2'>
-								About Us
-							</li>
-							<li className='text-sm py-2'>
-								Careers
-							</li>
-							<li className='text-sm py-2'>
-								Invest
-							</li>
-							<li className='text-sm py-2'>
-								Legal
-							</li>
+							<li className='text-sm py-2'>About Us</li>
+							<li className='text-sm py-2'>Careers</li>
+							<li className='text-sm py-2'>Invest</li>
+							<li className='text-sm py-2'>Legal</li>
 						</ul>
 					</div>
 				</div>
@@ -68,12 +53,14 @@ const Footer = () => {
 									type='email'
 									placeholder='Enter your email'
 								/>
-								<button
-									className='bg-button text-btnText px-4 p-2 w-full rounded-2xl shadow-xl 
+								<Link to='/signup'>
+									<button
+										className='bg-button text-btnText px-4 p-2 w-full rounded-2xl shadow-xl 
                                 hover:shadow-2xl md:w-auto my-2'
-								>
-									Sign Up
-								</button>
+									>
+										Sign Up
+									</button>
+								</Link>
 							</form>
 						</div>
 						<div className='flex py-4 justify-between text-accent '>
@@ -86,9 +73,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<p className='text-center py-4'>
-				Powered by Coin Gecko
-			</p>
+			<p className='text-center py-4'>Powered by Coin Gecko</p>
 		</div>
 	);
 };
