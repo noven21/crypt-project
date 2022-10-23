@@ -11,6 +11,7 @@ import CoinPage from './routes/CoinPage';
 import Footer from './components/Footer/Footer';
 import { AuthContextProvider } from './context/AuthContext';
 import CoinsItems from './routes/CoinsItems';
+import ScrollToTop from './components/ScrollToTop';
 
 function App({}) {
 	const [coins, setCoins] = useState([]);
@@ -40,15 +41,13 @@ function App({}) {
 		<ThemeProvider>
 			<AuthContextProvider>
 				<Navbar />
+				<ScrollToTop />
 				<Routes>
 					<Route path='/' element={<Home coins={coins} />} />
 					<Route path='/signin' element={<SignIn />} />
 					<Route path='/signup' element={<SignUp />} />
 					<Route path='/account' element={<Account />} />
-					<Route
-						path='/coinsitems'
-						element={<CoinsItems cryptos={cryptos} />}
-					/>
+					<Route path='/coinsitems' element={<CoinsItems cryptos={cryptos} />} />
 					<Route path='/coin/:coinId' element={<CoinPage />}>
 						<Route path=':coinId' />
 					</Route>

@@ -10,7 +10,7 @@ const MobileNav = ({ user, nav, handleNav, handleSignOut }) => {
 		<div>
 			<div
 				onClick={handleNav}
-				className='block md:hidden cursor-pointer z-10'
+				className='block md:hidden absolute right-5 top-7 cursor-pointer z-10'
 			>
 				{nav ? (
 					<AiOutlineClose size={20} />

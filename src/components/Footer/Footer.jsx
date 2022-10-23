@@ -7,9 +7,13 @@ import {
 	FaTwitter,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
+
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Footer = () => {
+	const { activeTab } = useAuth();
+
 	return (
 		<div className='rounded-div mt-8 pt-8 text-primary'>
 			<div className='grid md:grid-cols-2'>
@@ -46,7 +50,7 @@ const Footer = () => {
 							Sign Up for crypto News
 						</p>
 						<div className='py-4'>
-							<form>
+							<form className={activeTab ? 'hidden' : 'block'}>
 								<input
 									className='bg-primary border border-input p-2 mr-2 w-full shadow-xl rounded-2xl 
                                     md:w-auto'
