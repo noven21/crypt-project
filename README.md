@@ -1,8 +1,8 @@
-# ObsCrypto
+# cryptoapp
 
 ---
 
-ObsCrypto is a website that is made for a crypto enthusiasts or intrested in crypto. You can browse trending and track your favorite crypto coins.
+cryptoapp is a website that is made for a crypto enthusiasts or intrested in crypto. You can browse trending and track your favorite crypto coins.
 
 ---
 
